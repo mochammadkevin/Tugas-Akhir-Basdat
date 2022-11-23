@@ -16,27 +16,28 @@ if(isset($_POST['submit'])){
 
     move_uploaded_file($tmp_name, 'images/' . $gambar_motor);
     
-if($merk_motor && $nama_motor && $jenis_motor && $CC_motor && $gambar_motor && $tahun_keluaran && $jarak_tempuh && $harga_motor && $deskripsi_motor)
+    if($merk_motor && $nama_motor && $jenis_motor && $CC_motor && $gambar_motor && $tahun_keluaran && $jarak_tempuh && $harga_motor && $deskripsi_motor)
     {
         $sql4 	= "INSERT INTO motor (merk_motor, nama_motor, jenis_motor, CC_motor, gambar_motor, tahun_keluaran, jarak_tempuh, harga_motor, deskripsi_motor) 
         VALUES ('$merk_motor', '$nama_motor', '$jenis_motor', '$CC_motor', '$gambar_motor', '$tahun_keluaran', '$jarak_tempuh', '$harga_motor', '$deskripsi_motor')";
         $q4 	= mysqli_query($koneksi, $sql4);
         if($q4)
         {
-            $sukses = "Berhasil menambahkan katalog motor";
+            $success = "Berhasil menambahkan katalog motor";
+            if ($success) {
+                header("refresh:1;url=data-motor.php");
+            }
         }
         else
         {
             $error = "Gagal menambahkan katalog motor";
         }
     }
+        else
+        {
+            $error = "Data tidak boleh kosong";
+        }
 }
-else
-{
-    $error = "Data tidak boleh kosong";
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +106,7 @@ else
                     <div class="mb-3 row">
                         <label for="merk_motor" class="col-sm-2 col-form-label">Merk</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="merk_motor">
+                            <select class="form-control" id="merk_motor" name="merk_motor">
                                 <option value="">Pilih merk motor</option>
                                 <option value="Yamaha" <?php if ($merk_motor == "Yamaha") echo "selected" ?>>Yamaha</option>
                                 <option value="Honda" <?php if ($merk_motor == "Honda") echo "selected" ?>>Honda</option>
@@ -135,7 +136,7 @@ else
                     <div class="mb-3 row">
                         <label for="jenis_motor" class="col-sm-2 col-form-label">Jenis</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="jenis_motor">
+                            <select class="form-control" id="jenis_motor" name="jenis_motor">
                                 <option value="">Pilih jenis motor</option>
                                 <option value ="Bebek" <?php if ($jenis_motor == "Bebek") echo "selected" ?>>Bebek</option>
                                 <option value="Sport" <?php if ($jenis_motor == "Sport") echo "selected" ?>>Sport</option>
@@ -155,7 +156,7 @@ else
                     <div class="mb-3 row">
                         <label for="CC_motor" class="col-sm-2 col-form-label">CC</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="CC_motor">
+                            <select class="form-control" id="CC_motor" name="CC_motor">
                                 <option value="">Pilih CC motor</option>
                                 <option value="100" <?php if ($CC_motor == "100") echo "selected" ?>>100</option>
                                 <option value="125" <?php if ($CC_motor == "125") echo "selected" ?>>125</option>
@@ -184,7 +185,7 @@ else
                     <div class="mb-3 row">
                         <label for="jarak_tempuh" class="col-sm-2 col-form-label">Jarak Tempuh</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="jarak_tempuh">
+                            <select class="form-control" id="jarak_tempuh" name="jarak_tempuh">
                                 <option value="">Pilih jarak tempuh</option>
                                 <option value="1000" <?php if ($jarak_tempuh == "1000") echo "selected" ?>>0-1.000 km</option>
                                 <option value="5000" <?php if ($jarak_tempuh == "5000") echo "selected" ?>>1.000-5.000 km</option>
@@ -199,7 +200,7 @@ else
                     <div class="mb-3 row">
                         <label for="harga_motor" class="col-sm-2 col-form-label">Kisaran Harga</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="harga_motor">
+                            <select class="form-control" id="harga_motor" name="harga_motor">
                                 <option value="">Pilih kisaran harga</option>
                                 <option value="5000000" <?php if ($harga_motor == "5000000") echo "selected" ?>>0-5.000.000</option>
                                 <option value="10000000" <?php if ($harga_motor == "10000000") echo "selected" ?>>5.000.000-10.000.000</option>
