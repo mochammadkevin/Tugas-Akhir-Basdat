@@ -1,3 +1,10 @@
+<?php
+
+header( "refresh:1;url=dashboard-penjual.php" );
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Main Page</a>
+                        <a class="nav-link active" aria-current="page" href="">Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -40,11 +47,9 @@
         <div class="card">
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">Login Berhasil!</h4>
-                <p>Namun, website ini belum sepenuhnya selesai..</p>
                 <hr>
                 <p class="mb-0">Mohon ditunggu ya!</p>
             </div>
-            <a class="btn btn-danger" href="logout.php" role="button">Log out</a>
         </div>
     </div>
 </body>
