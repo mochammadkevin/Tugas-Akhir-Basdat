@@ -22,5 +22,13 @@ $error = "";
 $username = "";
 $password = "";
 $confirmpassword = "";
-
+$merk_motor = "";
+$nama_motor = "";
+$jenis_motor = "";
+$CC_motor = "";
+$gambar_motor = "";
+$tahun_keluaran = "";
+$jarak_tempuh = "";
+$harga_motor = "";
+$deskripsi_motor = "";
 ?>
