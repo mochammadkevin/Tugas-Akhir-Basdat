@@ -117,6 +117,10 @@ if (isset($_GET['id'])) {
                             <td><?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="100px" height="100px"></td>
+                            <td scope="row">
+                                    <a href="data-motor.php?op=edit&id=<?php echo $id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                    <a href="data-motor.php?op=delete&id=<?php echo $id?>" onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button" class="btn btn-danger">Delete</button></a>            
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
