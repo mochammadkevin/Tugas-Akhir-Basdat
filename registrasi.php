@@ -6,22 +6,22 @@ if(isset($_POST['register'])){
     $password = $_POST['password'];
     $duplicate = mysqli_query($koneksi, "SELECT * FROM registrasi WHERE username = '$username'");
     if(mysqli_num_rows($duplicate) > 0){
-        $error = "Username already registered";
+        $error = "Username sudah terdaftar";
     }
     else{
         if($username && $password){
             $sql3 = "INSERT INTO registrasi (username, password) VALUES ('$username', '$password')";
             $query3 = mysqli_query($koneksi, $sql3);
             if($query3){
-                $success = "Registration successful";
+                $success = "Registrasi sukses";
                 if ($success) {
                     header("refresh:1;url=login.php");
                 }
             }else{
-                $error = "Registration failed";
+                $error = "Registrasi gagal";
             }
         }else{
-            $error = "Please fill in all fields";
+            $error = "Username dan password harus diisi";
         }
     }
 }

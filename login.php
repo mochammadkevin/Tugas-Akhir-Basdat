@@ -10,14 +10,14 @@ if(isset($_POST['submit'])){
         if($password == $row['password']){
             $_SESSION['login'] = true;
             $_SESSION['id'] = $row['id'];
-            header("Location: berhasil.php");
+            header("Location: pilihan.php");
         }
         else{
-            $error = "Wrong password";
+            $error = "Password salah";
         }
     }
     else{
-        $error = "Username not registered";
+        $error = "Username tidak terdaftar";
     }
 }
 ?>
