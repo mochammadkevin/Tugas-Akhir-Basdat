@@ -88,6 +88,7 @@ if (isset($_GET['id'])) {
                             <th scope="col">Harga</th>
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Gambar</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     <tbody>
                         <?php
@@ -116,10 +117,14 @@ if (isset($_GET['id'])) {
                             <td><?php echo $jarak_tempuh ?></td>
                             <td><?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
-                            <td><img src="images/<?php echo $gambar_motor ?>" width="100px" height="100px"></td>
+                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
-                                    <a href="data-motor.php?op=edit&id=<?php echo $id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                    <a href="data-motor.php?op=delete&id=<?php echo $id?>" onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button" class="btn btn-danger">Delete</button></a>            
+                                <a href="data-motor.php?op=edit&id=<?php echo $id ?>"><button type="button"
+                                        class="btn btn-warning">Edit</button></a>
+                                <div>&nbsp;</div>
+                                <a href="data-motor.php?op=delete&id=<?php echo $id?>"
+                                    onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button"
+                                        class="btn btn-danger">Delete</button></a>
                             </td>
                         </tr>
                         <?php } ?>
