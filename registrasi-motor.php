@@ -74,13 +74,18 @@ if(isset($_POST['submit'])){
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="form-pembeli.php">Registrasi Motor</a>
+                </li>
+            </ul>
         </div>
+        </div>
+        
     </nav>
     <div class="mx-auto">
         <div class="card">
-            <div class="card-header">
-                Registrasi Motor
-            </div>
             <div class="card-body">
                 <?php
                 if($error){

@@ -31,6 +31,11 @@ if(isset($_POST['submit'])){
     <title>IPB Garage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
     .mx-auto {
         width: 850px;
@@ -43,7 +48,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="login.php">IPB Garage</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -53,7 +58,7 @@ if(isset($_POST['submit'])){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="form-pembeli.php">Registrasi Data</a>
+                        <a class="nav-link active" aria-current="page" href="form-pembeli.php">Registrasi Data Pembeli</a>
                     </li>
                 </ul>
             </div>
@@ -61,9 +66,6 @@ if(isset($_POST['submit'])){
     </nav>
     <div class="mx-auto">
         <div class="card">
-            <div class="card-header">
-                Registrasi Data Pembeli Motor
-            </div>
             <div class="card-body">
                 <?php
                 if($error){
@@ -113,7 +115,7 @@ if(isset($_POST['submit'])){
                         </div>
                     </div>
                     <div class="col-12">
-                        <input type="submit" name="submit" value="Registrasi" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Registrasi" class="btn btn-dark">
                     </div>
                 </form>
             </div>
