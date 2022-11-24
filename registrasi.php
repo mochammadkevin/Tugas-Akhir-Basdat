@@ -49,7 +49,7 @@ if(isset($_POST['register'])){
                  <div class="col-6">
                     <div class="header">
                         <h1>IPB Garage</h1>
-                        <p>Register your account.</p>
+                        <p>Registrasi akun anda.</p>
                     </div>
                     <?php
                     if($error){
@@ -72,14 +72,14 @@ if(isset($_POST['register'])){
                     <form action="" method="POST">
                         <div class="login-form">
                             <label for="username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username" name="username" placeholder="Enter your username" 
+                            <input type="username" class="form-control" id="username" name="username" placeholder="Masukkan username" 
                                 value="">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" 
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" 
                                 value="">
                             <input type="submit" name="register" value="Register" class="login-button">
                             <div class="text-center">
-                                <span class="d-inline">Already have an account? <a href="login.php"
+                                <span class="d-inline">Sudah memiliki akun? <a href="login.php"
                                         class="d-inline text-decoration-none">Log in</a></span>
                             </div>
                         </div>

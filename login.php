@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
                  <div class="col-6">
                     <div class="header">
                         <h1>IPB Garage</h1>
-                        <p>Welcome! Please enter your details.</p>
+                        <p>Selamat datang! Silahkan masukkan detail akun anda.</p>
                     </div>
                     <?php
                     if($error){
@@ -67,15 +67,15 @@ if(isset($_POST['submit'])){
                     <form action="" method="POST">
                         <div class="login-form">
                             <label for="username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username" name="username" placeholder="Enter your username" 
+                            <input type="username" class="form-control" id="username" name="username" placeholder="Masukkan username" 
                                 value="<?php echo $username ?>">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" 
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" 
                                 value="<?php echo $password ?>">
                             <input type="submit" name="submit" value="Login" class="login-button">
                             <div class="text-center">
-                                <span class="d-inline">Don't have an account? <a href="registrasi.php"
-                                        class="d-inline text-decoration-none">Sign up here</a></span>
+                                <span class="d-inline">Tidak memiliki akun? <a href="registrasi.php"
+                                        class="d-inline text-decoration-none">Registrasi di sini</a></span>
                             </div>
                         </div>
                     </div>
