@@ -1,7 +1,5 @@
 <?php
-
 header( "refresh:1;url=dashboard-penjual.php" );
-
 ?>
 
 
@@ -27,28 +25,12 @@ header( "refresh:1;url=dashboard-penjual.php" );
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="login.php">IPB Garage</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <div class="mx-auto">
         <div class="card">
             <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Login Berhasil!</h4>
+                <h4 class="alert-heading">Login Successful!</h4>
                 <hr>
-                <p class="mb-0">Mohon ditunggu ya!</p>
+                <p class="mb-0">Please wait..</p>
             </div>
         </div>
     </div>
