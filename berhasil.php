@@ -30,7 +30,7 @@ header( "refresh:1;url=dashboard-penjual.php" );
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">Login Successful!</h4>
                 <hr>
-                <p class="mb-0">Please wait..</p>
+                <p class="mb-0">Please wait</p>
             </div>
         </div>
     </div>
