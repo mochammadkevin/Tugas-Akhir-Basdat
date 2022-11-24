@@ -13,119 +13,113 @@ if(isset($_POST['submit'])){
             header("Location: berhasil.php");
         }
         else{
-            $error = "Password salah";
+            $error = "Wrong password";
         }
     }
     else{
-        $error = "Username tidak terdaftar";
+        $error = "Username not registered";
     }
 }
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPB Garage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-    .mx-auto {
-        width: 800px;
-    }
-
-    .card {
-        margin-top: 10px;
-    }
-    </style>
-
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>IPB Garage</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="login.php">IPB Garage</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registrasi.php">Registrasi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="mx-auto">
-        <div class="card">
-            <div class="card-header">
-                Masuk Akun
-            </div>
-            <div class="card-body">
-                <?php
-                if($error){
-                ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $error; ?>
-                </div>
-                <?php
-                }
-                ?>
-                <?php
-                if($success){
-                ?>
-                <div class="alert alert-success" role="alert">
-                    <?php echo $success; ?>
-                </div>
-                <?php
-                }
-                ?>
-                <form action="" method="POST">
-                    <div class="mb-3 row">
-                        <label for="username" class="col-sm-2 col-form-label">Username</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username" name="username"
+    <section class="login d-flex">
+        <div class="login-left w-50 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                 <div class="col-6">
+                    <div class="header">
+                        <h1>IPB Garage</h1>
+                        <p>Welcome! Please enter your details.</p>
+                    </div>
+                    <?php
+                    if($error){
+                    ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $error; ?>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if($success){
+                    ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $success; ?>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <form action="" method="POST">
+                        <div class="login-form">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="username" class="form-control" id="username" name="username" placeholder="Enter your username" 
                                 value="<?php echo $username ?>">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="password"
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" 
                                 value="<?php echo $password ?>">
+                            <input type="submit" name="submit" value="Login" class="login-button">
+                            <div class="text-center">
+                                <span class="d-inline">Don't have an account? <a href="registrasi.php"
+                                        class="d-inline text-decoration-none">Sign up here</a></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio1">Pembeli</label>
-
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio2">Penjual</label>
-                    </div>
-
-                    <div>&nbsp;</div>
-
-                    <div class="col-12">
-                        <input type="submit" name="submit" value="Login" class="btn btn-primary">
-                    </div>
-
-                    <div>&nbsp;</div>
-
-                    <!-- give text -->
-                    <div> Belum registrasi? <a href="registrasi.php">Klik disini</a> </div>
-
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
+        <div class="login-right w-50 h-100">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>sell.</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>explore.</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/3.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>have fun.</h5>
+                        </div>
+                    </div>
+                </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
