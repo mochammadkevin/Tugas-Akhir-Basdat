@@ -17,7 +17,22 @@ if (isset($_GET['id'])) {
     $harga_motor = $data['harga_motor'];
     $deskripsi_motor = $data['deskripsi_motor'];
 }
+if (isset($_GET['op'])) {
+    $op = $_GET['op'];
+} else {
+    $op = "";
+}
 
+if ($op == 'delete') {
+    $idm = $_GET['id'];
+    $del = "delete from motor where id_motor = '$idm'";
+    $q = mysqli_query($koneksi, $del);
+    if ($q) {
+        $success = "Berhasil hapus data";
+    } else {
+        $error = "Gagal melakukan delete data";
+    }
+}
 ?>
 
 
@@ -119,10 +134,10 @@ if (isset($_GET['id'])) {
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
-                                <a href="data-motor.php?op=edit&id=<?php echo $id ?>"><button type="button"
+                                <a href="form-edit-motor.php?id=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-warning">Edit</button></a>
                                 <div>&nbsp;</div>
-                                <a href="data-motor.php?op=delete&id=<?php echo $id?>"
+                                <a href="data-motor.php?op=delete&id=<?php echo $r5['id_motor']?>"
                                     onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button"
                                         class="btn btn-danger">Delete</button></a>
                             </td>
