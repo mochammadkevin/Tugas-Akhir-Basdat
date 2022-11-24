@@ -151,7 +151,7 @@ if ($op == 'delete') {
                     </tbody>
                     </thead>
                 </table>
-                <a class="btn btn-primary" href="registrasi-motor.php" role="button">Tambah motor</a>
+                <a class="btn btn-dark" href="registrasi-motor.php" role="button">Tambah motor</a>
             </div>
         </div>
 

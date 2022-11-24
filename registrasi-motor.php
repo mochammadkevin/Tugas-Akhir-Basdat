@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="login.php">IPB Garage</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -225,7 +225,7 @@ if(isset($_POST['submit'])){
                         </div>
                     </div>
                     <div class="col-12">
-                        <input type="submit" name="submit" value="Registrasi" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Registrasi" class="btn btn-dark">
                     </div>
                 </form>
             </div>
