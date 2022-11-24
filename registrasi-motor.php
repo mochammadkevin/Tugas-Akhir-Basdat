@@ -163,8 +163,8 @@ if(isset($_POST['submit'])){
                                 <option value="150" <?php if ($CC_motor == "150") echo "selected" ?>>150</option>
                                 <option value="200" <?php if ($CC_motor == "200") echo "selected" ?>>200</option>
                                 <option value="250" <?php if ($CC_motor == "250") echo "selected" ?>>250</option>
-                                <option value="300" <?php if ($CC_motor == "600") echo "selected" ?>>600</option>
-                                <option value="350" <?php if ($CC_motor == "1000") echo "selected" ?>>1000</option>
+                                <option value="600" <?php if ($CC_motor == "600") echo "selected" ?>>600</option>
+                                <option value="1000" <?php if ($CC_motor == "1000") echo "selected" ?>>1000</option>
                             </select>
                         </div>
                     </div>
@@ -187,13 +187,13 @@ if(isset($_POST['submit'])){
                         <div class="col-sm-10">
                             <select class="form-control" id="jarak_tempuh" name="jarak_tempuh">
                                 <option value="">Pilih jarak tempuh</option>
-                                <option value="1000" <?php if ($jarak_tempuh == "1000") echo "selected" ?>>0-1.000 km</option>
-                                <option value="5000" <?php if ($jarak_tempuh == "5000") echo "selected" ?>>1.000-5.000 km</option>
-                                <option value="10000" <?php if ($jarak_tempuh == "10000") echo "selected" ?>>5.000-10.000 km</option>
-                                <option value="20000" <?php if ($jarak_tempuh == "20000") echo "selected" ?>>10.000-20.000 km</option>
-                                <option value="50000" <?php if ($jarak_tempuh == "50000") echo "selected" ?>>20.000-50.000 km</option>
-                                <option value="100000" <?php if ($jarak_tempuh == "100000") echo "selected" ?>>50.000-100.000 km</option>
-                                <option value="100000+" <?php if ($jarak_tempuh == "100000+") echo "selected" ?>>>100.000 km</option>
+                                <option value="0 - 1.000 km" <?php if ($jarak_tempuh == "0 - 1.000 km") echo "selected" ?>>0 - 1.000 km</option>
+                                <option value="1.000 - 5.000 km" <?php if ($jarak_tempuh == "1.000 - 5.000 km") echo "selected" ?>>1.000 - 5.000 km</option>
+                                <option value="5.000 - 10.000 km" <?php if ($jarak_tempuh == "5.000 - 10.000 km") echo "selected" ?>>5.000 - 10.000 km</option>
+                                <option value="10.000 - 20.000 km" <?php if ($jarak_tempuh == "10.000 - 20.000 km") echo "selected" ?>>10.000 - 20.000 km</option>
+                                <option value="20.000 - 50.000 km" <?php if ($jarak_tempuh == "20.000 - 50.000 km") echo "selected" ?>>20.000 - 50.000 km</option>
+                                <option value="50.000 - 100.000 km" <?php if ($jarak_tempuh == "50.000 - 100.000 km") echo "selected" ?>>50.000 - 100.000 km</option>
+                                <option value="100.000 km+" <?php if ($jarak_tempuh == "100.000 km+") echo "selected" ?>>>100.000 km</option>
                             </select>
                         </div>
                     </div>
@@ -202,18 +202,18 @@ if(isset($_POST['submit'])){
                         <div class="col-sm-10">
                             <select class="form-control" id="harga_motor" name="harga_motor">
                                 <option value="">Pilih kisaran harga</option>
-                                <option value="5000000" <?php if ($harga_motor == "5000000") echo "selected" ?>>0-5.000.000</option>
-                                <option value="10000000" <?php if ($harga_motor == "10000000") echo "selected" ?>>5.000.000-10.000.000</option>
-                                <option value="20000000" <?php if ($harga_motor == "20000000") echo "selected" ?>>10.000.000-20.000.000</option>
-                                <option value="30000000" <?php if ($harga_motor == "30000000") echo "selected" ?>>20.000.000-30.000.000</option>
-                                <option value="40000000" <?php if ($harga_motor == "40000000") echo "selected" ?>>30.000.000-40.000.000</option>
-                                <option value="50000000" <?php if ($harga_motor == "50000000") echo "selected" ?>>40.000.000-50.000.000</option>
-                                <option value="60000000" <?php if ($harga_motor == "60000000") echo "selected" ?>>50.000.000-60.000.000</option>
-                                <option value="70000000" <?php if ($harga_motor == "70000000") echo "selected" ?>>60.000.000-70.000.000</option>
-                                <option value="80000000" <?php if ($harga_motor == "80000000") echo "selected" ?>>70.000.000-80.000.000</option>
-                                <option value="90000000" <?php if ($harga_motor == "90000000") echo "selected" ?>>80.000.000-90.000.000</option>
-                                <option value="100000000" <?php if ($harga_motor == "100000000") echo "selected" ?>>90.000.000-100.000.000</option>
-                                <option value="100000000+" <?php if ($harga_motor == "100000000+") echo "selected" ?>>>100.000.000</option>
+                                <option value="Rp. 0 - 5.000.000" <?php if ($harga_motor == "Rp. 0 - 5.000.000") echo "selected" ?>>Rp. 0 - 5.000.000</option>
+                                <option value="Rp. 5.000.000 - 10.000.000" <?php if ($harga_motor == "Rp. 5.000.000 - 10.000.000") echo "selected" ?>>Rp. 5.000.000 - 10.000.000</option>
+                                <option value="Rp. 10.000.000 - 20.000.000" <?php if ($harga_motor == "Rp. 10.000.000 - 20.000.000") echo "selected" ?>>Rp. 10.000.000 - 20.000.000</option>
+                                <option value="Rp. 20.000.000 - 30.000.000" <?php if ($harga_motor == "Rp. 20.000.000 - 30.000.000") echo "selected" ?>>Rp. 20.000.000 - 30.000.000</option>
+                                <option value="Rp. 30.000.000 - 40.000.000" <?php if ($harga_motor == "Rp. 30.000.000 - 40.000.000") echo "selected" ?>>Rp. 30.000.000 - 40.000.000</option>
+                                <option value="Rp. 40.000.000 - 50.000.000" <?php if ($harga_motor == "Rp. 40.000.000 - 50.000.000") echo "selected" ?>>Rp. 40.000.000 - 50.000.000</option>
+                                <option value="Rp. 50.000.000 - 60.000.000" <?php if ($harga_motor == "Rp. 50.000.000 - 60.000.000") echo "selected" ?>>Rp. 50.000.000 - 60.000.000</option>
+                                <option value="Rp. 60.000.000 - 70.000.000" <?php if ($harga_motor == "Rp. 60.000.000 - 70.000.000") echo "selected" ?>>Rp. 60.000.000 - 70.000.000</option>
+                                <option value="Rp. 70.000.000 - 80.000.000" <?php if ($harga_motor == "Rp. 70.000.000 - 80.000.000") echo "selected" ?>>Rp. 70.000.000 - 80.000.000</option>
+                                <option value="Rp. 80.000.000 - 90.000.000" <?php if ($harga_motor == "Rp. 80.000.000 - 90.000.000") echo "selected" ?>>Rp. 80.000.000 - 90.000.000</option>
+                                <option value="Rp. 90.000.000 - 100.000.000" <?php if ($harga_motor == "Rp. 90.000.000 - 100.000.000") echo "selected" ?>>Rp. 90.000.000 - 100.000.000</option>
+                                <option value="Rp. 100.000.000+" <?php if ($harga_motor == "Rp. 100.000.000+") echo "selected" ?>>> Rp. 100.000.000</option>
                             </select>
                         </div>
                     </div>
