@@ -74,7 +74,7 @@ require 'function.php';
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM motor ORDER BY id_motor ASC";
+                            $sql5 = "SELECT * FROM motor WHERE id_user != $_SESSION[id_user] ORDER BY id_motor ASC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
