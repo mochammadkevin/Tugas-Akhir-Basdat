@@ -39,13 +39,12 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    halo
     <section class="login d-flex">
         <div class="login-left w-50 h-100">
             <div class="row justify-content-center align-items-center h-100">
                  <div class="col-6">
                     <div class="header">
-                        <h1>IPB Garage</h1>
+                        <h1>IPB Garage Testing</h1>
                         <p>Selamat datang! Silahkan masukkan detail akun anda.</p>
                     </div>
                     <?php
