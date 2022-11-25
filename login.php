@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
+    halo
     <section class="login d-flex">
         <div class="login-left w-50 h-100">
             <div class="row justify-content-center align-items-center h-100">
