@@ -20,7 +20,7 @@ if(isset($_POST['register'])){
             if($query3){
                 $success = "Registrasi sukses";
                 if ($success) {
-                    header("refresh:1;url=login.php");
+                    header("refresh:1;url=index.php");
                 }
             }else{
                 $error = "Registrasi gagal";
@@ -96,7 +96,7 @@ if(isset($_POST['register'])){
                                 value="">
                             <input type="submit" name="register" value="Register" class="login-button">
                             <div class="text-center">
-                                <span class="d-inline">Sudah memiliki akun? <a href="login.php"
+                                <span class="d-inline">Sudah memiliki akun? <a href="index.php"
                                         class="d-inline text-decoration-none">Log in</a></span>
                             </div>
                         </div>
