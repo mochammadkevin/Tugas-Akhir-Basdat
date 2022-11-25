@@ -54,7 +54,7 @@ require 'function.php';
     <div class="mx-auto">
         <div class="card">
             <div class="card-header">
-                Data Motor
+                Sementara gini mek, nanti bisa kek dibuat card gitu
             </div>
             <div class="card-body">
                 <table class="table">
@@ -101,12 +101,10 @@ require 'function.php';
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
-                                <a href="form-edit-motor.php?id=<?php echo $r5['id_motor'] ?>"><button type="button"
-                                        class="btn btn-warning">Edit</button></a>
+                                <a href="">Detail</button></a>
                                 <div>&nbsp;</div>
-                                <a href="data-motor.php?op=delete&id=<?php echo $r5['id_motor']?>"
-                                    onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button"
-                                        class="btn btn-danger">Delete</button></a>
+                                <a href="">Beli</button></a>
+                                <div>&nbsp;</div>
                             </td>
                         </tr>
                         <?php } ?>
