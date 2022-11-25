@@ -4,7 +4,7 @@ require 'function.php';
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $result = mysqli_query($koneksi, "SELECT * FROM registrasi WHERE username = '$username'");
+    $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
     $row = mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result) > 0){
         if($password == $row['password']){
