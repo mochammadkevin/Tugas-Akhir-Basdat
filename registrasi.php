@@ -78,26 +78,26 @@ if(isset($_POST['register'])){
                         <div class="login-form">
                             <label for="username" class="form-label">Username</label>
                             <input type="username" class="form-control" id="username" name="username" placeholder="Masukkan username" 
-                                value="">
+                                value="" required>
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" 
-                                value="">
+                                value="" required>
                             <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
                             <input type="nama_lengkap" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" 
-                                value="">
+                                value="" required>
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="alamat" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat" 
                                 value="">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" 
-                                value="">
+                                value="" required>
                             <label for="nomor_tlp" class="form-label">Nomor Telepon</label>
                             <input type="nomor_tlp" class="form-control" id="nomor_tlp" name="nomor_tlp" placeholder="Masukkan nomor telepon" 
-                                value="">
+                                value="" required>
                             <input type="submit" name="register" value="Register" class="login-button">
                             <div class="text-center">
                                 <span class="d-inline">Sudah memiliki akun? <a href="index.php"
-                                        class="d-inline text-decoration-none">Log in</a></span>
+                                        class="d-inline text-decoration-none" required>Log in</a></span>
                             </div>
                         </div>
                     </div>
