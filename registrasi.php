@@ -4,13 +4,18 @@ require 'function.php';
 if(isset($_POST['register'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $duplicate = mysqli_query($koneksi, "SELECT * FROM registrasi WHERE username = '$username'");
+    $nama_lengkap = $_POST['nama_lengkap'];
+    $alamat = $_POST['alamat'];
+    $email = $_POST['email'];
+    $nomor_tlp = $_POST['nomor_tlp'];
+
+    $duplicate = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
     if(mysqli_num_rows($duplicate) > 0){
         $error = "Username sudah terdaftar";
     }
     else{
         if($username && $password){
-            $sql3 = "INSERT INTO registrasi (username, password) VALUES ('$username', '$password')";
+            $sql3 = "INSERT INTO user (username, password, nama_lengkap, alamat_rumah, email, nomor_tlp) VALUES ('$username', '$password', '$nama_lengkap', '$alamat', '$email', '$nomor_tlp')";
             $query3 = mysqli_query($koneksi, $sql3);
             if($query3){
                 $success = "Registrasi sukses";
@@ -76,6 +81,18 @@ if(isset($_POST['register'])){
                                 value="">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" 
+                                value="">
+                            <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                            <input type="nama_lengkap" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" 
+                                value="">
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <input type="alamat" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat" 
+                                value="">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" 
+                                value="">
+                            <label for="nomor_tlp" class="form-label">Nomor Telepon</label>
+                            <input type="nomor_tlp" class="form-control" id="nomor_tlp" name="nomor_tlp" placeholder="Masukkan nomor telepon" 
                                 value="">
                             <input type="submit" name="register" value="Register" class="login-button">
                             <div class="text-center">
