@@ -1,6 +1,9 @@
 <?php
-
-require 'function.php';
+session_start();
+if ($_SESSION['login'] != true) {
+    echo '<script>window.location="index.php"</script>';
+}
+include 'function.php';
 
 if(isset($_POST['submit'])){
     $merk_motor 	    = $_POST['merk_motor'];

@@ -2,6 +2,7 @@
 require 'function.php';
 
 if(isset($_POST['submit'])){
+    session_start();
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
@@ -10,7 +11,7 @@ if(isset($_POST['submit'])){
         if($password == $row['password']){
             $_SESSION['login'] = true;
             $_SESSION['id_user'] = $row['id_user'];
-            header("Location: pilihan.php");
+            header("Location: dashboard.php");
         }
         else{
             $error = "Password salah";
