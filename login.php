@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result) > 0){
         if($password == $row['password']){
             $_SESSION['login'] = true;
-            $_SESSION['id'] = $row['id'];
+            $_SESSION['id_user'] = $row['id_user'];
             header("Location: pilihan.php");
         }
         else{

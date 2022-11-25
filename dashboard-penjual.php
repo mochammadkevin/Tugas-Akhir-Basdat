@@ -1,3 +1,9 @@
+<?php session_start(); 
+    if ($_SESSION['login'] != true) {
+        echo '<script>window.location="login.php"</script>';
+    }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +20,6 @@
     <link rel="stylesheet" href="style.css">
     <title>IPB Garage</title>
     <style>
-    .mx-auto {
-        width: 800px;
-    }
-
-    .card {
-        margin-top: 10px;
-    }
     </style>
 </head>
 

@@ -13,13 +13,14 @@ if(isset($_POST['submit'])){
     $jarak_tempuh 	    = $_POST['jarak_tempuh'];
     $harga_motor 		= $_POST['harga_motor'];
     $deskripsi_motor 	= $_POST['deskripsi_motor'];
+    $id_user            = $_SESSION['id_user'];
 
     move_uploaded_file($tmp_name, 'images/' . $gambar_motor);
     
     if($merk_motor && $nama_motor && $jenis_motor && $CC_motor && $gambar_motor && $tahun_keluaran && $jarak_tempuh && $harga_motor && $deskripsi_motor)
     {
-        $sql4 	= "INSERT INTO motor (merk_motor, nama_motor, jenis_motor, CC_motor, gambar_motor, tahun_keluaran, jarak_tempuh, harga_motor, deskripsi_motor) 
-        VALUES ('$merk_motor', '$nama_motor', '$jenis_motor', '$CC_motor', '$gambar_motor', '$tahun_keluaran', '$jarak_tempuh', '$harga_motor', '$deskripsi_motor')";
+        $sql4 	= "INSERT INTO motor (id_user, merk_motor, nama_motor, jenis_motor, CC_motor, gambar_motor, tahun_keluaran, jarak_tempuh, harga_motor, deskripsi_motor) 
+        VALUES ('$id_user', '$merk_motor', '$nama_motor', '$jenis_motor', '$CC_motor', '$gambar_motor', '$tahun_keluaran', '$jarak_tempuh', '$harga_motor', '$deskripsi_motor')";
         $q4 	= mysqli_query($koneksi, $sql4);
         if($q4)
         {
@@ -82,8 +83,8 @@ if(isset($_POST['submit'])){
             </ul>
         </div>
         </div>
-        
     </nav>
+    <?php echo $_SESSION['id_user']; ?>
     <div class="mx-auto">
         <div class="card">
             <div class="card-body">

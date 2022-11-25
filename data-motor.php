@@ -3,7 +3,7 @@ require 'function.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM motor WHERE id_motor = $id";
+    $sql = "SELECT * FROM motor WHERE id_motor = $id and id_user = $_SESSION[id_user]";
     $query = mysqli_query($koneksi, $sql);
     $data = mysqli_fetch_array($query);
     $id_motor = $data['id_motor'];
@@ -112,7 +112,7 @@ if ($op == 'delete') {
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM motor ORDER BY id_motor ASC";
+                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] ORDER BY id_motor ASC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
