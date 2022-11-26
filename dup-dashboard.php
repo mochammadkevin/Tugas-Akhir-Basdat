@@ -67,8 +67,13 @@ require 'function.php';
                             <th scope="col">#</th>
                             <th scope="col">Merk</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Gambar</th>
+                            <th scope="col">Jenis</th>
+                            <th scope="col">CC</th>
+                            <th scope="col">Tahun Keluaran</th>
+                            <th scope="col">Jarak Tempuh</th>
                             <th scope="col">Harga</th>
+                            <th scope="col">Deskripsi</th>
+                            <th scope="col">Gambar</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     <tbody>
@@ -80,15 +85,25 @@ require 'function.php';
                                 $id_motor = $r5['id_motor'];
                                 $nama_motor = $r5['nama_motor'];
                                 $merk_motor = $r5['merk_motor'];
+                                $jenis_motor = $r5['jenis_motor'];
+                                $CC_motor = $r5['CC_motor'];
                                 $gambar_motor = $r5['gambar_motor'];
+                                $tahun_keluaran = $r5['tahun_keluaran'];
+                                $jarak_tempuh = $r5['jarak_tempuh'];
                                 $harga_motor = $r5['harga_motor'];
+                                $deskripsi_motor = $r5['deskripsi_motor'];
                         ?>
                         <tr>
                             <th scope="row"><?php echo $urut++ ?></th>
                             <td><?php echo $merk_motor ?></td>
                             <td><?php echo $nama_motor ?></td>
-                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
+                            <td><?php echo $jenis_motor ?></td>
+                            <td><?php echo $CC_motor ?></td>
+                            <td><?php echo $tahun_keluaran ?></td>
+                            <td><?php echo $jarak_tempuh ?></td>
                             <td>Rp. <?php echo $harga_motor ?></td>
+                            <td><?php echo $deskripsi_motor ?></td>
+                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
                                 <a href="detail-motor.php? idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-light">Detail</button></a>
