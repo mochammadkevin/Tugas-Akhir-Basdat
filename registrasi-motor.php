@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="login.php">IPB Garage</a>
+            <a class="navbar-brand" href="index.php">IPB Garage</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="data-motor.php">Motor</a>
+                        <a class="nav-link active" aria-current="page" href="data-motor.php">Kembali</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="form-pembeli.php">Registrasi Motor</a>
@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </nav>
-    <?php echo $_SESSION['id_user']; ?>
+   
     <div class="mx-auto">
         <div class="card">
             <div class="card-body">
