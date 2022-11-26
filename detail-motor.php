@@ -14,16 +14,15 @@ if (isset($_GET['idm'])) {
     $motor = mysqli_query($koneksi, "SELECT * FROM motor WHERE id_motor = '$_GET[idm]'");
     $m = mysqli_fetch_object($motor);
 
-    $id_motor = $data['id_motor'];
     $nama_motor = $m->nama_motor;
     $merk_motor = $m->merk_motor;
-    // $jenis_motor = $data['jenis_motor'];
+    $jenis_motor = $m->jenis_motor;
     $CC_motor = $m->CC_motor;
     $gambar_motor = $m->gambar_motor;
-    // $tahun_keluaran = $data['tahun_keluaran'];
-    // $jarak_tempuh = $data['jarak_tempuh'];
+    $tahun_keluaran = $m->tahun_keluaran;
+    $jarak_tempuh = $m->jarak_tempuh;
     $harga_motor = $m->harga_motor;
-    // $deskripsi_motor = $data['deskripsi_motor'];
+    $deskripsi_motor = $m->deskripsi_motor;
 }
 
 ?>
@@ -78,7 +77,6 @@ if (isset($_GET['idm'])) {
         </div>
     </nav>
     <div class="mx-auto">
-        <?php echo $idm?>
         <div class="card">
             <div class="card-header">
                 Detail Motor
@@ -101,37 +99,43 @@ if (isset($_GET['idm'])) {
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Jenis</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $jenis_motor; ?>">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="CC_motor" class="col-sm-2 col-form-label">CC</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="CC_motor" value="<?php echo $CC_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Tahun Keluaran</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $tahun_keluaran; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Jarak tempuh</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $jarak_tempuh; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Harga</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="Rp. <?php echo $harga_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $deskripsi_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Gambar</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="">
+                        <img src="images/<?php echo $m->gambar_motor ?>" width="300px">
                     </div>
                 </div>
                 </form>

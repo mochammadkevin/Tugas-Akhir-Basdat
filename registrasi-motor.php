@@ -280,7 +280,7 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="harga_motor" class="col-sm-2 col-form-label">harga_motor</label>
+                        <label for="harga_motor" class="col-sm-2 col-form-label">Harga Motor</label>
                         <div class="col-sm-10">
                             <input type="text" placeholder="Masukkan harga, cth: 5000000" class="form-control"
                                 id="harga_motor" name="harga_motor" value="<?php echo $harga_motor ?>" required>
