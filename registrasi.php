@@ -2,10 +2,10 @@
 require 'function.php';
 
 if(isset($_POST['register'])){
-    $username = $_POST['username'];
+    $username = ucwords($_POST['username']);
     $password = $_POST['password'];
     $nama_lengkap = $_POST['nama_lengkap'];
-    $alamat = $_POST['alamat'];
+    $alamat = ucwords($_POST['alamat']);
     $email = $_POST['email'];
     $nomor_tlp = $_POST['nomor_tlp'];
 
