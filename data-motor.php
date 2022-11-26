@@ -122,11 +122,11 @@ if (isset($_GET['id'])) {
                             <td><?php echo $CC_motor ?></td>
                             <td><?php echo $tahun_keluaran ?></td>
                             <td><?php echo $jarak_tempuh ?></td>
-                            <td><?php echo $harga_motor ?></td>
+                            <td>Rp.<?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
-                                <a href="form-edit-motor.php?id=<?php echo $r5['id_motor'] ?>"><button type="button"
+                                <a href="edit-motor.php?idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-warning">Edit</button></a>
                                 <div>&nbsp;</div>
                                 <a href="proses-hapus.php?idm=<?php echo $r5['id_motor']?>"
