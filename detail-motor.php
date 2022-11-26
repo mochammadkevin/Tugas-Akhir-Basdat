@@ -8,12 +8,11 @@ include 'function.php';
 if (isset($_GET['idm'])) {
     $idm = $_GET['idm'];
     $sql = "SELECT * FROM motor WHERE id_motor = $idm and id_user = $_SESSION[id_user]";
-    $query = mysqli_query($koneksi, $sql);
-    $data = mysqli_fetch_array($query);
 
     $motor = mysqli_query($koneksi, "SELECT * FROM motor WHERE id_motor = '$_GET[idm]'");
     $m = mysqli_fetch_object($motor);
 
+    $idp = $m->id_user; 
     $nama_motor = $m->nama_motor;
     $merk_motor = $m->merk_motor;
     $jenis_motor = $m->jenis_motor;
@@ -23,6 +22,17 @@ if (isset($_GET['idm'])) {
     $jarak_tempuh = $m->jarak_tempuh;
     $harga_motor = $m->harga_motor;
     $deskripsi_motor = $m->deskripsi_motor;
+
+    $sql2 = "SELECT * FROM user WHERE id_user = $idp";
+    $query2 = mysqli_query($koneksi, $sql2);
+
+    $user = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user = $idp");
+    $u = mysqli_fetch_object($user);
+
+    $nama_p = $u->nama_lengkap;
+    $email_p = $u->email;
+    $tlp_p= $u->nomor_tlp;
+    $alamat_p = $u->alamat_rumah;
 }
 
 ?>
@@ -151,25 +161,25 @@ if (isset($_GET['idm'])) {
                 <div class="mb-3 row">
                     <label for="nama_lengkap" class="col-sm-2 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nama_lengkap" value="">
+                        <input type="text" readonly class="form-control" id="nama_lengkap" value="<?php echo $nama_p?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="alamat_rumah" class="col-sm-2 col-form-label">Alamat Rumah</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="alamat_rumah" value="">
+                        <input type="text" readonly class="form-control" id="alamat_rumah" value="<?php echo $alamat_p ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="nama_lengkap" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nama_lengkap" value="">
+                        <input type="text" readonly class="form-control" id="nama_lengkap" value="<?php echo $email_p ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="nomor_tlp" class="col-sm-2 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nomor_tlp" value="">
+                        <input type="text" readonly class="form-control" id="nomor_tlp" value="<?php echo $tlp_p ?>">
                     </div>
                 </div>
                 </form>
