@@ -48,6 +48,13 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
     <title>IPB Garage</title>
     <style>
+        .mx-auto {
+        width: 900px;
+    }
+
+    .card {
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -61,9 +68,6 @@ if(isset($_POST['submit'])){
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Dashboard Penjual</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="profile.php">Profil</a>
                     </li>

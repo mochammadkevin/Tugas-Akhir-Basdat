@@ -35,9 +35,6 @@ require 'function.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Dashboard Penjual</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
@@ -54,7 +51,6 @@ require 'function.php';
     <div class="mx-auto">
         <div class="card">
             <div class="card-header">
-                Sementara gini mek, nanti bisa kek dibuat card gitu
             </div>
             <div class="card-body">
                 <table class="table">
@@ -101,10 +97,8 @@ require 'function.php';
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
-                                <a href="">Detail</button></a>
-                                <div>&nbsp;</div>
-                                <a href="">Beli</button></a>
-                                <div>&nbsp;</div>
+                                <a href="detail-motor.php"><button type="button"
+                                        class="btn btn-light">Detail</button></a>
                             </td>
                         </tr>
                         <?php } ?>

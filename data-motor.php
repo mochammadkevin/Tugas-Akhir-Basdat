@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Profil</a>
+                        <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="">Motor</a>
@@ -122,7 +122,7 @@ if (isset($_GET['id'])) {
                             <td><?php echo $CC_motor ?></td>
                             <td><?php echo $tahun_keluaran ?></td>
                             <td><?php echo $jarak_tempuh ?></td>
-                            <td>Rp.<?php echo $harga_motor ?></td>
+                            <td>Rp. <?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
                             <td scope="row">
