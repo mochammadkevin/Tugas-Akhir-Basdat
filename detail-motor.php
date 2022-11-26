@@ -7,14 +7,14 @@ include 'function.php';
 
 if (isset($_GET['idm'])) {
     $idm = $_GET['idm'];
-    // $sql = "SELECT * FROM motor WHERE id_motor = $idm and id_user = $_SESSION[id_user]";
-    // $query = mysqli_query($koneksi, $sql);
-    // $data = mysqli_fetch_array($query);
+    $sql = "SELECT * FROM motor WHERE id_motor = $idm and id_user = $_SESSION[id_user]";
+    $query = mysqli_query($koneksi, $sql);
+    $data = mysqli_fetch_array($query);
 
     $motor = mysqli_query($koneksi, "SELECT * FROM motor WHERE id_motor = '$_GET[idm]'");
     $m = mysqli_fetch_object($motor);
 
-    // $id_motor = $data['id_motor'];
+    $id_motor = $data['id_motor'];
     $nama_motor = $m->nama_motor;
     $merk_motor = $m->merk_motor;
     // $jenis_motor = $data['jenis_motor'];
