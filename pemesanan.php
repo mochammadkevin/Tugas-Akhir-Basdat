@@ -93,6 +93,7 @@ include 'function.php';
     </div>
     <?php
     if (isset($_POST['submit'])) {
+        $updatestat =
         $id_motor = $_GET['idm'];
         $nama_ekspedisi = $_POST['nama_ekspedisi'];
         $query = "INSERT INTO shipment (nama_ekspedisi, id_motor) VALUES ('$nama_ekspedisi', '$id_motor')";
