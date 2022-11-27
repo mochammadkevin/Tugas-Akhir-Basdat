@@ -70,6 +70,9 @@ if (isset($_GET['id'])) {
                         <a class="nav-link active" aria-current="page" href="">Motor Saya</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
                     </li>
                 </ul>
