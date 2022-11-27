@@ -4,19 +4,6 @@ if ($_SESSION['login'] != true) {
     echo '<script>window.location="index.php"</script>';
 }
 include 'function.php';
-
-$id_motor = $_GET['idm'];
-if (isset($_POST['submit'])) {
-    $idm = $id_motor;
-    $nama_ekspedisi = $_POST['nama_ekspedisi'];
-    $sql9 = "INSERT INTO shipment (id_motor, nama_ekspedisi) VALUES ('$id_motor', '$nama_ekspedisi')";
-    $query9 = mysqli_query($koneksi, $sql9);
-    if ($query9) {
-        echo '<script>alert("Data berhasil ditambahkan");window.location="pemesanan.php"</script>';
-    } else {
-        echo '<script>alert("Data gagal ditambahkan");window.location="pemesanan.php"</script>';
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +22,13 @@ if (isset($_POST['submit'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
-    .mx-auto {
-        width: 750px;
-    }
+        .mx-auto {
+            width: 750px;
+        }
 
-    .card {
-        margin-top: 10px;
-    }
+        .card {
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -77,30 +64,48 @@ if (isset($_POST['submit'])) {
                 Pemesanan
             </div>
             <div class="card-body">
+            <form action="" method="POST">
                 <div class="mb-3 row">
-                    <label for="CC_motor" class="col-sm-2 col-form-label">Pengiriman</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="CC_motor" name="CC_motor" required>
-                            <option value="">Pilih Pengiriman</option>
-                            <option value="JNE">JNE
-                            <option value="J&T Express">J&T Express</option>
-                            <option value="POS Indonesia">POS Indonesia</option>
-                            <option value="TIKI">TIKI</option>
-                            <option value="SiCepat">SiCepat</option>
-                            <option value="Ninja Xpress">Ninja Xpress</option>
-                            <option value="Indah Logistik">Indah Logistik</option>
-                        </select>
-                    </div>
+                    <label for="nama_ekspedisi" class="col-sm-2 col-form-label">Pengiriman</label>
+                    
+                        <div class="col-sm-10">
+                            <select class="form-control" id="nama_ekspedisi" name="nama_ekspedisi" required>
+                                <option value="">Pilih Pengiriman</option>
+                                <option value="JNE">JNE
+                                <option value="J&T Express">J&T Express</option>
+                                <option value="POS Indonesia">POS Indonesia</option>
+                                <option value="TIKI">TIKI</option>
+                                <option value="SiCepat">SiCepat</option>
+                                <option value="Ninja Xpress">Ninja Xpress</option>
+                                <option value="Indah Logistik">Indah Logistik</option>
+                            </select>
+                        </div>
                 </div>
                 <div class="col-12">
                     <td scope="row">
                         <input type="submit" name="submit" value="Pesan" class="login-button">
                     </td>
                 </div>
+            </form>
+                
             </div>
         </div>
     </div>
-    <?php echo $id_motor ?>
+    <?php
+    if (isset($_POST['submit'])) {
+        $id_motor = $_GET['idm'];
+        $nama_ekspedisi = $_POST['nama_ekspedisi'];
+        $query = "INSERT INTO shipment (nama_ekspedisi, id_motor) VALUES ('$nama_ekspedisi', '$id_motor')";
+        $result = mysqli_query($koneksi, $query);
+        if ($result) {
+            echo '<script>alert("Pemesanan berhasil");window.location="transaksi.php"</script>';
+        } else {
+            echo '<script>alert("Pemesanan gagal");window.location="transaksi.php"</script>';
+        }
+
+    }
+
+    ?>
 </body>
 
 </html>
