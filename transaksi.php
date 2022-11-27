@@ -76,7 +76,9 @@ require 'function.php';
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM shipment LEFT JOIN motor USING(id_motor)  ORDER BY id_motor ASC";
+                            $id_user = $_SESSION['id_user'];
+                            $sql5 = "SELECT * FROM shipment LEFT JOIN motor USING(id_motor) WHERE shipment.id_user = $id_user";
+                            // $test = "SELECT * FROM $test WHERE id_user = '$_SESSION[id_user]'";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
