@@ -76,7 +76,7 @@ require 'function.php';
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM motor WHERE id_user != $_SESSION[id_user] ORDER BY id_motor ASC";
+                            $sql5 = "SELECT * FROM shipment LEFT JOIN motor USING(id_motor)  ORDER BY id_motor ASC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
@@ -85,6 +85,11 @@ require 'function.php';
                                 $merk_motor = $r5['merk_motor'];
                                 $gambar_motor = $r5['gambar_motor'];
                                 $harga_motor = $r5['harga_motor'];
+
+                                // idmotor
+                                // id pemesanan
+                                // id user
+                                // idShip
                         ?>
                         <tr>
                             <th scope="row"><?php echo $urut++ ?></th>
