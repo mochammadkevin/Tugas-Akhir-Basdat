@@ -40,10 +40,10 @@ if(isset($_POST['register'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <title>IPB Garage</title>
 </head>
 
@@ -94,7 +94,7 @@ if(isset($_POST['register'])){
                             <label for="nomor_tlp" class="form-label">Nomor Telepon</label>
                             <input type="nomor_tlp" class="form-control" id="nomor_tlp" name="nomor_tlp"
                                 placeholder="Masukkan nomor telepon" value="" required>
-                            <input type="submit" name="register" value="Register" class="login-button">
+                            <input type="submit" name="register" value="Registrasi" class="login-button">
                             <div class="text-center">
                                 <span class="d-inline">Sudah memiliki akun? <a href="index.php"
                                         class="d-inline text-decoration-none" required>Log in</a></span>

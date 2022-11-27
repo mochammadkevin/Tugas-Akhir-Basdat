@@ -6,6 +6,13 @@ if( !isset($_SESSION["login"]) ) {
     exit;
   }
 
+$sql9 = "SELECT * FROM user WHERE id_user = $_SESSION[id_user]";
+$query9 = mysqli_query($koneksi, $sql9);
+$data = mysqli_fetch_array($query9);
+$id_user = $data['id_user'];
+$username = $data['username'];
+$nama_lengkap = $data['nama_lengkap'];
+
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -22,6 +29,7 @@ if (isset($_GET['id'])) {
     $jarak_tempuh = $data['jarak_tempuh'];
     $harga_motor = $data['harga_motor'];
     $deskripsi_motor = $data['deskripsi_motor'];
+    $status_motor = $data['status_motor'];
 }
 
 ?>
@@ -76,6 +84,9 @@ if (isset($_GET['id'])) {
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -99,11 +110,12 @@ if (isset($_GET['id'])) {
                             <th scope="col">Harga</th>
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Gambar</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] AND status_motor != NULL ORDER BY id_motor ASC";
+                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] ORDER BY id_motor ASC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
@@ -117,6 +129,7 @@ if (isset($_GET['id'])) {
                                 $jarak_tempuh = $r5['jarak_tempuh'];
                                 $harga_motor = $r5['harga_motor'];
                                 $deskripsi_motor = $r5['deskripsi_motor'];
+                                $status_motor = $r5['status_motor'];
                         ?>
                         <tr>
                             <th scope="row"><?php echo $urut++ ?></th>
@@ -129,6 +142,7 @@ if (isset($_GET['id'])) {
                             <td>Rp. <?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px"></td>
+                            <td><?php if ($status_motor != 1) { echo "Tersedia";} else { echo "Terpesan";}?></td>
                             <td scope="row">
                                 <a href="edit-motor.php?idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-warning">Edit</button></a>

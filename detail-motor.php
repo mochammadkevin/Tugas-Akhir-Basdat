@@ -6,6 +6,13 @@ if( !isset($_SESSION["login"]) ) {
   }
 include 'function.php';
 
+$sql = "SELECT * FROM user WHERE id_user = $_SESSION[id_user]";
+$query = mysqli_query($koneksi, $sql);
+$data = mysqli_fetch_array($query);
+$id_user = $data['id_user'];
+$username = $data['username'];
+$nama_lengkap = $data['nama_lengkap'];
+
 if (isset($_GET['idm'])) {
     $idm = $_GET['idm'];
     $sql = "SELECT * FROM motor WHERE id_motor = $idm and id_user = $_SESSION[id_user]";
@@ -85,6 +92,9 @@ if (isset($_GET['idm'])) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
                     </li>
                 </ul>
             </div>

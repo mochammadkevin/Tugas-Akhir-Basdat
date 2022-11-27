@@ -16,6 +16,13 @@ $alamat_rumah = $data['alamat_rumah'];
 $nomor_tlp = $data['nomor_tlp'];
 $email = $data['email'];
 
+$sql9 = "SELECT * FROM user WHERE id_user = $_SESSION[id_user]";
+$query9 = mysqli_query($koneksi, $sql9);
+$data = mysqli_fetch_array($query9);
+$id_user = $data['id_user'];
+$username = $data['username'];
+$nama_lengkap = $data['nama_lengkap'];
+
 if(isset($_POST['submit'])){
     $nama_lengkap = ucwords($_POST['nama_lengkap']);
     $email = $_POST['email'];
@@ -80,6 +87,9 @@ if(isset($_POST['submit'])){
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
                     </li>
                 </ul>
             </div>
