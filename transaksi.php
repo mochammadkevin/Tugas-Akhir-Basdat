@@ -77,7 +77,7 @@ require 'function.php';
                     <tbody>
                         <?php
                             $id_user = $_SESSION['id_user'];
-                            $sql5 = "SELECT * FROM shipment LEFT JOIN motor USING(id_motor) WHERE shipment.id_user = $id_user";
+                            $sql5 = "SELECT * FROM shipment INNER JOIN motor USING(id_motor) WHERE shipment.id_user = $id_user";
                             // $test = "SELECT * FROM $test WHERE id_user = '$_SESSION[id_user]'";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
