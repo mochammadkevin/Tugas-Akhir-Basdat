@@ -9,7 +9,7 @@ if (isset($_GET['idm'])) {
     $idm = $_GET['idm'];
     $sql = "SELECT * FROM motor WHERE id_motor = $idm and id_user = $_SESSION[id_user]";
     $query = mysqli_query($koneksi, $sql);
-    $data = mysqli_fetch_array($query);
+    
 
     $motor = mysqli_query($koneksi, "SELECT * FROM motor WHERE id_motor = '$_GET[idm]'");
     $m = mysqli_fetch_object($motor);
@@ -23,8 +23,7 @@ if (isset($_GET['idm'])) {
     $jarak_tempuh = $m->jarak_tempuh;
     $harga_motor = $m->harga_motor;
     $deskripsi_motor = $m->deskripsi_motor;
-}
-
+}                               
 ?>
 
 <!DOCTYPE html>
@@ -99,37 +98,43 @@ if (isset($_GET['idm'])) {
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Jenis</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $jenis_motor; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor"
+                            value="<?php echo $jenis_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="CC_motor" class="col-sm-2 col-form-label">CC</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="CC_motor" value="<?php echo $CC_motor; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="CC_motor"
+                            value="<?php echo $CC_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Tahun Keluaran</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $tahun_keluaran; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor"
+                            value="<?php echo $tahun_keluaran; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Jarak tempuh</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $jarak_tempuh; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor"
+                            value="<?php echo $jarak_tempuh; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Harga</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="Rp. <?php echo $harga_motor; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor"
+                            value="Rp. <?php echo $harga_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="merk_motor" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="merk_motor" value="<?php echo $deskripsi_motor; ?>">
+                        <input type="text" readonly class="form-control-plaintext" id="merk_motor"
+                            value="<?php echo $deskripsi_motor; ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -176,12 +181,22 @@ if (isset($_GET['idm'])) {
             </div>
         </div>
         &nbsp;
+        <?php 
+        $sql8 = "SELECT * FROM motor";
+        $query8 = mysqli_query($koneksi, $sql8);
+        $r8 = mysqli_fetch_array($query8);
+        $id_motor = $r8['id_motor'];
+        {
+        ?>
         <div class="col-12">
-            <input type="submit" name="submit" value="Beli" class="btn btn-dark">
+            <td scope="row">
+                <a href="pemesanan.php? idm=<?php echo $r8['id_motor'] ?>"><button type="button"
+                        class="btn btn-dark">Pesan</button></a>
+            </td>
         </div>
         &nbsp;
     </div>
-
+    <?php } ?>
 </body>
 
 </html>

@@ -40,10 +40,10 @@ if(isset($_POST['register'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
     <title>IPB Garage</title>
 </head>
 
@@ -51,7 +51,7 @@ if(isset($_POST['register'])){
     <section class="login d-flex">
         <div class="login-left w-50 h-100">
             <div class="row justify-content-center align-items-center h-100">
-                 <div class="col-6">
+                <div class="col-6">
                     <div class="header">
                         <h1>IPB Garage</h1>
                         <p>Registrasi akun anda.</p>
@@ -77,32 +77,32 @@ if(isset($_POST['register'])){
                     <form action="" method="POST">
                         <div class="login-form">
                             <label for="username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username" name="username" placeholder="Masukkan username" 
-                                value="" required>
+                            <input type="username" class="form-control" id="username" name="username"
+                                placeholder="Masukkan username" value="" required>
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" 
-                                value="" required>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Masukkan password" value="" required>
                             <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                            <input type="nama_lengkap" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" 
-                                value="" required>
+                            <input type="nama_lengkap" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                                placeholder="Masukkan nama lengkap" value="" required>
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="alamat" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat" 
-                                value="">
+                            <input type="alamat" class="form-control" id="alamat" name="alamat"
+                                placeholder="Masukkan alamat" value="">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" 
-                                value="" required>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Masukkan email" value="" required>
                             <label for="nomor_tlp" class="form-label">Nomor Telepon</label>
-                            <input type="nomor_tlp" class="form-control" id="nomor_tlp" name="nomor_tlp" placeholder="Masukkan nomor telepon" 
-                                value="" required>
+                            <input type="nomor_tlp" class="form-control" id="nomor_tlp" name="nomor_tlp"
+                                placeholder="Masukkan nomor telepon" value="" required>
                             <input type="submit" name="register" value="Register" class="login-button">
                             <div class="text-center">
                                 <span class="d-inline">Sudah memiliki akun? <a href="index.php"
                                         class="d-inline text-decoration-none" required>Log in</a></span>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
+        </div>
         <div class="login-right w-50 h-100">
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -125,19 +125,19 @@ if(isset($_POST['register'])){
                         </div>
                     </div>
                 </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </section>
+        </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

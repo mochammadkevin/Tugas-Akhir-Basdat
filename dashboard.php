@@ -87,7 +87,7 @@ require 'function.php';
                             <th scope="row"><?php echo $urut++ ?></th>
                             <td><?php echo $merk_motor ?></td>
                             <td><?php echo $nama_motor ?></td>
-                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
+                            <td><img src="images/<?php echo $gambar_motor ?>" width="300px" ></td>
                             <td>Rp. <?php echo $harga_motor ?></td>
                             <td scope="row">
                                 <a href="detail-motor.php? idm=<?php echo $r5['id_motor'] ?>"><button type="button"

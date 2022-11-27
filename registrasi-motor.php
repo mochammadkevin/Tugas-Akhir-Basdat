@@ -64,13 +64,13 @@ if (isset($_POST['submit'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
-        .mx-auto {
-            width: 1000px;
-        }
+    .mx-auto {
+        width: 1000px;
+    }
 
-        .card {
-            margin-top: 10px;
-        }
+    .card {
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -94,9 +94,9 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </nav>
-
     <div class="mx-auto">
         <div class="card">
+            <div class="card-header"> Form Registrasi Motor </div>
             <div class="card-body">
                 <?php
                 if ($error) {
@@ -118,7 +118,6 @@ if (isset($_POST['submit'])) {
                 ?>
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="mb-3 row">
-                        <div class="card-header"> Form Registrasi  Motor </div>
                         <label for="merk_motor" class="col-sm-2 col-form-label">Merk</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="merk_motor" name="merk_motor" required>
@@ -162,8 +161,7 @@ if (isset($_POST['submit'])) {
                                     echo "selected" ?>>MV
                                     Agusta</option>
                                 <option value="Royal Enfield" <?php if ($merk_motor=="Royal Enfield")
-                                    echo "selected" ?>
-                                    >Royal Enfield</option>
+                                    echo "selected" ?>>Royal Enfield</option>
                             </select>
                         </div>
                     </div>
@@ -256,8 +254,7 @@ if (isset($_POST['submit'])) {
                             <select class="form-control" id="jarak_tempuh" name="jarak_tempuh" required>
                                 <option value="">Pilih jarak tempuh</option>
                                 <option value="0 - 1.000 km" <?php if ($jarak_tempuh=="0 - 1.000 km")
-                                    echo "selected" ?>
-                                    >0 - 1.000 km</option>
+                                    echo "selected" ?>>0 - 1.000 km</option>
                                 <option value="1.000 - 5.000 km" <?php if ($jarak_tempuh=="1.000 - 5.000 km")
                                     echo
                                     "selected" ?>>1.000 - 5.000 km</option>
@@ -274,8 +271,7 @@ if (isset($_POST['submit'])) {
                                     echo
                                     "selected" ?>>50.000 - 100.000 km</option>
                                 <option value="100.000 km+" <?php if ($jarak_tempuh=="100.000 km+")
-                                    echo "selected" ?>
-                                    >>100.000 km</option>
+                                    echo "selected" ?>>>100.000 km</option>
                             </select>
                         </div>
                     </div>
