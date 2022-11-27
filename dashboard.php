@@ -72,7 +72,7 @@ $nama_lengkap = $data['nama_lengkap'];
     <div class="mx-auto">
         <div class="card">
             <div class="card-header" style="font-size: 25px;">
-                Selamat Datang ! <?php echo $nama_lengkap;?> di IPB Garage
+                Selamat Datang ! <?php echo $nama_lengkap;?>
             </div>
             <div class="card-header">
                 Motor yang tersedia di IPB Garage
