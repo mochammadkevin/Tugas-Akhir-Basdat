@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">Motor Saya</a>
+                        <a class="nav-link active" aria-current="page" href="">Jual Motor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>

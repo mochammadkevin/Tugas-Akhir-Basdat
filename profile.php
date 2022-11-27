@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
                         <a class="nav-link active" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="data-motor.php">Motor Saya</a>
+                        <a class="nav-link" aria-current="page" href="data-motor.php">Jual Motor</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
