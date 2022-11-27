@@ -111,7 +111,7 @@ $nama_lengkap = $data['nama_lengkap'];
                             <td><img src="images/<?php echo $gambar_motor ?>" width="300px" ></td>
                             <td>Rp. <?php echo $harga_motor ?></td>
                             <td scope="row">
-                                <a href="detail-motor.php? idm=<?php echo $r5['id_motor'] ?>"><button type="button"
+                                <a href="struk.php? idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-light">Detail</button></a>
                             </td>
                         </tr>
