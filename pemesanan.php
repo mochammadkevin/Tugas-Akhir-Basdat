@@ -95,8 +95,12 @@ include 'function.php';
     <?php
     if (isset($_POST['submit'])) {
         $id_motor = $_GET['idm'];
+        $id_user = $_SESSION['id_user'];
+        $update = mysqli_query($koneksi, "UPDATE motor SET 
+        status_motor = not status_motor
+        WHERE id_motor = '$id_motor'"); 
         $nama_ekspedisi = $_POST['nama_ekspedisi'];
-        $query = "INSERT INTO shipment (nama_ekspedisi, id_motor) VALUES ('$nama_ekspedisi', '$id_motor')";
+        $query = "INSERT INTO shipment (nama_ekspedisi, id_motor, id_user) VALUES ('$nama_ekspedisi', '$id_motor', '$id_user')";
         $result = mysqli_query($koneksi, $query);
         if ($result) {
             echo '<script>alert("Pemesanan berhasil");window.location="transaksi.php"</script>';
