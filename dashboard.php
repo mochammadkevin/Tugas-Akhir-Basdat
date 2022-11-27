@@ -5,7 +5,12 @@ if( !isset($_SESSION["login"]) ) {
     header("Location: index.php");
     exit;
   }
-
+$sql = "SELECT * FROM user WHERE id_user = $_SESSION[id_user]";
+$query = mysqli_query($koneksi, $sql);
+$data = mysqli_fetch_array($query);
+$id_user = $data['id_user'];
+$username = $data['username'];
+$nama_lengkap = $data['nama_lengkap'];
 ?>
 
 <!DOCTYPE html>
@@ -56,15 +61,23 @@ if( !isset($_SESSION["login"]) ) {
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
                     </li>
+                    <!-- ini float in right dungs -->
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="mx-auto">
         <div class="card">
+            <div class="card-header" style="font-size: 25px;">
+                Selamat Datang ! <?php echo $nama_lengkap;?> di IPB Garage
+            </div>
             <div class="card-header">
                 Motor yang tersedia di IPB Garage
             </div>
+            
             <div class="card-body">
                 <table class="table">
                     <thead>
