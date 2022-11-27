@@ -127,7 +127,7 @@ if (isset($_GET['id'])) {
                             <td><?php echo $jarak_tempuh ?></td>
                             <td>Rp. <?php echo $harga_motor ?></td>
                             <td><?php echo $deskripsi_motor ?></td>
-                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" height="150px"></td>
+                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px"></td>
                             <td scope="row">
                                 <a href="edit-motor.php?idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-warning">Edit</button></a>

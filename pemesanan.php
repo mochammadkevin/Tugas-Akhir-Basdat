@@ -93,8 +93,10 @@ include 'function.php';
     </div>
     <?php
     if (isset($_POST['submit'])) {
-        $updatestat =
         $id_motor = $_GET['idm'];
+        $update = mysqli_query($koneksi, "UPDATE motor SET 
+        status_motor = not status_motor
+        WHERE id_motor = '$id_motor'"); 
         $nama_ekspedisi = $_POST['nama_ekspedisi'];
         $query = "INSERT INTO shipment (nama_ekspedisi, id_motor) VALUES ('$nama_ekspedisi', '$id_motor')";
         $result = mysqli_query($koneksi, $query);
