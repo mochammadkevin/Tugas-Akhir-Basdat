@@ -49,7 +49,7 @@ require 'function.php';
                         <a class="nav-link" aria-current="page" href="data-motor.php">Motor Saya</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
+                        <a class="nav-link active" aria-current="page" href="transaksi.php">Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
@@ -61,7 +61,7 @@ require 'function.php';
     <div class="mx-auto">
         <div class="card">
             <div class="card-header">
-                Motor yang tersedia di IPB Garage
+                Motor yang telah dipesan
             </div>
             <div class="card-body">
                 <table class="table">

@@ -77,7 +77,10 @@ if (isset($_GET['idm'])) {
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="data-motor.php">Motor</a>
+                        <a class="nav-link" aria-current="page" href="data-motor.php">Motor Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
@@ -192,22 +195,14 @@ if (isset($_GET['idm'])) {
             </div>
         </div>
         &nbsp;
-        <?php 
-        $sql8 = "SELECT * FROM motor";
-        $query8 = mysqli_query($koneksi, $sql8);
-        $r8 = mysqli_fetch_array($query8);
-        $id_motor = $r8['id_motor'];
-        {
-        ?>
         <div class="col-12">
             <td scope="row">
-                <a href="pemesanan.php? idm=<?php echo $r8['id_motor'] ?>"><button type="button"
+                <a href="pemesanan.php? idm=<?php echo $idm ?>"><button type="button"
                         class="btn btn-dark">Pesan</button></a>
             </td>
         </div>
         &nbsp;
     </div>
-    <?php } ?>
 </body>
 
 </html>

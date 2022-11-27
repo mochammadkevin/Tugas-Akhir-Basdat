@@ -5,6 +5,18 @@ if ($_SESSION['login'] != true) {
 }
 include 'function.php';
 
+$id_motor = $_GET['idm'];
+if (isset($_POST['submit'])) {
+    $idm = $id_motor;
+    $nama_ekspedisi = $_POST['nama_ekspedisi'];
+    $sql9 = "INSERT INTO shipment (id_motor, nama_ekspedisi) VALUES ('$id_motor', '$nama_ekspedisi')";
+    $query9 = mysqli_query($koneksi, $sql9);
+    if ($query9) {
+        echo '<script>alert("Data berhasil ditambahkan");window.location="pemesanan.php"</script>';
+    } else {
+        echo '<script>alert("Data gagal ditambahkan");window.location="pemesanan.php"</script>';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +59,10 @@ include 'function.php';
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="data-motor.php">Motor</a>
+                        <a class="nav-link" aria-current="page" href="data-motor.php">Motor Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
@@ -67,24 +82,25 @@ include 'function.php';
                     <div class="col-sm-10">
                         <select class="form-control" id="CC_motor" name="CC_motor" required>
                             <option value="">Pilih Pengiriman</option>
-                            <option value="JNE">JNE</option>
-                            <option value="J&T Ekspress">J&T Ekspress</option>
+                            <option value="JNE">JNE
+                            <option value="J&T Express">J&T Express</option>
                             <option value="POS Indonesia">POS Indonesia</option>
                             <option value="TIKI">TIKI</option>
                             <option value="SiCepat">SiCepat</option>
-                            <option value="NinjaExpress">NinjaExpress</option>
+                            <option value="Ninja Xpress">Ninja Xpress</option>
                             <option value="Indah Logistik">Indah Logistik</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-12">
                     <td scope="row">
-                        <a href=""><button type="button" class="btn btn-dark">Pesan</button></a>
+                        <input type="submit" name="submit" value="Pesan" class="login-button">
                     </td>
                 </div>
             </div>
         </div>
     </div>
+    <?php echo $id_motor ?>
 </body>
 
 </html>
