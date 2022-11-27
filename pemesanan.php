@@ -1,8 +1,9 @@
 <?php
 session_start();
-if ($_SESSION['login'] != true) {
-    echo '<script>window.location="index.php"</script>';
-}
+if( !isset($_SESSION["login"]) ) {
+    header("Location: index.php");
+    exit;
+  }
 include 'function.php';
 ?>
 
@@ -93,7 +94,6 @@ include 'function.php';
     </div>
     <?php
     if (isset($_POST['submit'])) {
-        $updatestat =
         $id_motor = $_GET['idm'];
         $nama_ekspedisi = $_POST['nama_ekspedisi'];
         $query = "INSERT INTO shipment (nama_ekspedisi, id_motor) VALUES ('$nama_ekspedisi', '$id_motor')";

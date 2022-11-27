@@ -1,9 +1,10 @@
 <?php
 session_start();
 include 'function.php';
-if ($_SESSION['login'] != true) {
-    echo '<script>window.location="login.php"</script>';
-}
+if( !isset($_SESSION["login"]) ) {
+    header("Location: index.php");
+    exit;
+  }
 
 $id_user = $_SESSION['id_user'];
 $sql = "SELECT * FROM user WHERE id_user = $id_user";

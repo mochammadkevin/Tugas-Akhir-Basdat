@@ -1,12 +1,18 @@
 <?php
+session_start();
+if( isset($_SESSION["login"]) ) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 require 'function.php';
 
 if(isset($_POST['submit'])){
-    session_start();
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
     $row = mysqli_fetch_assoc($result);
+    
     if(mysqli_num_rows($result) > 0){
         if($password == $row['password']){
             $_SESSION['login'] = true;

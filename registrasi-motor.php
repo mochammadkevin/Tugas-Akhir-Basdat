@@ -1,7 +1,8 @@
 <?php
 session_start();
-if ($_SESSION['login'] != true) {
-    echo '<script>window.location="index.php"</script>';
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
 }
 include 'function.php';
 
