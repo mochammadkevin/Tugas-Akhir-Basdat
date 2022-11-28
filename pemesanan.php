@@ -43,14 +43,17 @@ include 'function.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="data-motor.php">Motor Saya</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
+                        <a class="nav-link" aria-current="page" href="keranjang.php">Keranjang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="struk.php">Struk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
@@ -103,9 +106,9 @@ include 'function.php';
         $query = "INSERT INTO shipment (nama_ekspedisi, id_motor, id_user) VALUES ('$nama_ekspedisi', '$id_motor', '$id_user')";
         $result = mysqli_query($koneksi, $query);
         if ($result) {
-            echo '<script>alert("Pemesanan berhasil");window.location="transaksi.php"</script>';
+            echo '<script>alert("Pemesanan berhasil");window.location="keranjang.php"</script>';
         } else {
-            echo '<script>alert("Pemesanan gagal");window.location="transaksi.php"</script>';
+            echo '<script>alert("Pemesanan gagal");window.location="keranjang.php"</script>';
         }
 
     }
