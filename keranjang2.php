@@ -62,16 +62,16 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/styles.css?v=<?php echo time(); ?>">
     <title>IPB Garage</title>
     <style>
-        .mx-auto {
-            width: 1000px;
-        }
+    .mx-auto {
+        width: 1000px;
+    }
 
-        .card {
-            margin-top: 10px;
-        }
+    .card {
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -85,18 +85,25 @@ if (isset($_POST['submit'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="data-motor.php">Jual Motor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="transaksi.php">Keranjang 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
-                    </li>
+                <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="data-motor.php">Jual Motor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="keranjang.php">Keranjang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="struk.php">Struk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
+                        </li>
+                        <!-- ini float in right dungs -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"><?php echo $username ?></a>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -172,39 +179,6 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
-    <!-- <div class="mx-auto">
-        <div class="card">
-            <div class="card-header">
-                Detail Penjual
-            </div>
-            <div class="card-body">
-                <div class="mb-3 row">
-                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Nama Lengkap</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nama_lengkap" value="<?php echo $nama_p ?>">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="alamat_rumah" class="col-sm-2 col-form-label">Alamat Rumah</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="alamat_rumah" value="<?php echo $alamat_p ?>">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nama_lengkap" value="<?php echo $email_p ?>">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="nomor_tlp" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control" id="nomor_tlp" value="<?php echo $tlp_p ?>">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="mx-auto">
         <div class="card">
             <div class="card-header">
@@ -218,20 +192,19 @@ if (isset($_POST['submit'])) {
                             value="<?php echo $nama_ekspedisi ?>">
                     </div>
                 </div>
-
-                <form action="" method="POST">
-                    <div class="col-12">
-                    <a href="keranjang.php?ids=<?php echo $ids ?>"> 
-                    <input type="submit" name="submit" value="Tampilkan Struk" 
-                    class="login-button"></a>
-                   
-                    </div>
-                </form>
-
             </div>
         </div>
+        <div>&nbsp;</div> 
+        <form action="" method="POST">
+            <div class="col-12">
+                <a href="keranjang.php?ids=<?php echo $ids ?>">
+                    <input type="submit" name="submit" value="Tampilkan Struk" class="btn btn-dark"></a>
+            </div>
+        </form>
+        <div>&nbsp;</div> 
     </div>
- 
+
+
 </body>
 
 </html>
