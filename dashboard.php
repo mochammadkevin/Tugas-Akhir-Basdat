@@ -27,7 +27,7 @@ $nama_lengkap = $data['nama_lengkap'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/dashboard.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
