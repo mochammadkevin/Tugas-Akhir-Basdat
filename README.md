@@ -26,6 +26,6 @@ Repository ini ditujukan sebagai bentuk pengumpulan untuk Mata Kuliah Basis Data
 - Struk
 
 ## Built by
-- HTML
-- CSS
-- PHP
+[![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
+[![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
