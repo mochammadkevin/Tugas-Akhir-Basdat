@@ -53,104 +53,121 @@ if(isset($_POST['submit'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     <title>IPB Garage</title>
     <style>
-        .mx-auto {
+    .mx-auto {
         width: 900px;
     }
 
     .card {
+        margin-top: 50px;
+    }
+
+    .card-body {
         margin-top: 10px;
     }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="dashboard.php">IPB Garage</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="profile.php">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="data-motor.php">Jual Motor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
-                    </li>
-                </ul>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="dashboard.php">IPB Garage</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="profile.php">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="data-motor.php">Jual Motor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="keranjang.php">Keranjang</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="struk.php">Struk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
+                        </li>
+                        <!-- ini float in right dungs -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"><?php echo $username ?></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="container">
+            <div class="left">
+                <div class="mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <?php
+                        if ($error) {
+                        ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $error; ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                            <?php
+                        if ($success) {
+                        ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $success; ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                            <form action="" method="POST">
+                                <div class="mb-3 row">
+                                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Nama Lengkap</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" placeholder="nama lengkap" class="form-control"
+                                            id="nama_lengkap" name="nama_lengkap" value="<?php echo $nama_lengkap ?>">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Alamat rumah</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" placeholder="alamat rumah" class="form-control"
+                                            id="alamat_rumah" name="alamat_rumah" value="<?php echo $alamat_rumah ?>">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" placeholder="email" class="form-control" id="email"
+                                            name="email" value="<?php echo $email ?>">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="nama_lengkap" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" placeholder="nomor telepon" class="form-control"
+                                            id="nomor_tlp" name="nomor_tlp" value="<?php echo $nomor_tlp ?>">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <input type="submit" name="submit" value="Simpan" class="btn btn-dark">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="mx-auto">
-        <div class="card">
-            <div class="card-body">
-                <?php
-                if ($error) {
-                ?>
-                <div class="alert alert-danger" role="alert">
-                    <?php echo $error; ?>
-                </div>
-                <?php
-                }
-                ?>
-                <?php
-                if ($success) {
-                ?>
-                <div class="alert alert-success" role="alert">
-                    <?php echo $success; ?>
-                </div>
-                
-                <?php
-                }
-                ?>
-                <form action="" method="POST">
-                    <div class="mb-3 row">
-                        <label for="nama_lengkap" class="col-sm-2 col-form-label">Nama Lengkap</label>
-                        <div class="col-sm-10">
-                            <input type="text" placeholder="nama lengkap" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?php echo $nama_lengkap ?>">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="nama_lengkap" class="col-sm-2 col-form-label">Alamat rumah</label>
-                        <div class="col-sm-10">
-                            <input type="text" placeholder="alamat rumah" class="form-control" id="alamat_rumah" name="alamat_rumah" value="<?php echo $alamat_rumah ?>">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="nama_lengkap" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="email" placeholder="email" class="form-control" id="email" name="email" value="<?php echo $email ?>">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="nama_lengkap" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                        <div class="col-sm-10">
-                            <input type="text" placeholder="nomor telepon" class="form-control" id="nomor_tlp" name="nomor_tlp" value="<?php echo $nomor_tlp ?>">
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col-12">
-                        <input type="submit" name="submit" value="Simpan" class="btn btn-dark">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    </section>
 </body>
 
 </html>
