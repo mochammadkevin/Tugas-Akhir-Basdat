@@ -13,6 +13,11 @@ Repository ini ditujukan sebagai bentuk pengumpulan untuk Mata Kuliah Basis Data
 
 ![image](https://user-images.githubusercontent.com/88078382/204354258-ad0c2cf5-7b88-4d0d-94b7-f6490f0ed46a.png)
 
+## Anggota
+- Mochammad Kevin Ariobimo (G6401211061)
+- Hariz Krisha Muhammad (G6401211106)
+- Rifqi Fauzan Azzam (G6401211008)
+
 ## Features
 - Profil User
 - Jual Motor
