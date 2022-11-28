@@ -17,7 +17,7 @@ include 'function.php';
     <title>IPB Garage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/styles.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -87,7 +87,7 @@ include 'function.php';
                 </div>
                 <div class="col-12">
                     <td scope="row">
-                        <input type="submit" name="submit" value="Pesan" class="login-button">
+                        <input type="submit" name="submit" value="Pesan" class="btn btn-dark">
                     </td>
                 </div>
             </form>
@@ -108,7 +108,7 @@ include 'function.php';
         if ($result) {
             echo '<script>alert("Pemesanan berhasil");window.location="keranjang.php"</script>';
         } else {
-            echo '<script>alert("Pemesanan gagal");window.location="keranjang.php"</script>';
+            echo '<script>alert("Pemesanan gagal")';
         }
 
     }
