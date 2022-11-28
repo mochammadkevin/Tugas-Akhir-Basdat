@@ -26,7 +26,7 @@ $nama_lengkap = $data['nama_lengkap'];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/styles.css?v=<?php echo time(); ?>">
     <title>IPB Garage</title>
     <style>
     .mx-auto {
@@ -81,7 +81,7 @@ $nama_lengkap = $data['nama_lengkap'];
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No.</th>
                             <th scope="col">Merk</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Gambar</th>
@@ -103,11 +103,6 @@ $nama_lengkap = $data['nama_lengkap'];
                                 $merk_motor = $r5['merk_motor'];
                                 $gambar_motor = $r5['gambar_motor'];
                                 $harga_motor = $r5['harga_motor'];
-
-                                // idmotor
-                                // id pemesanan
-                                // id user
-                                // idShip
                         ?>
                         <tr>
                             <th scope="row"><?php echo $urut++ ?></th>
