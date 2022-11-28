@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -72,14 +72,17 @@ if (isset($_GET['id'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="">Jual Motor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="transaksi.php">Transaksi</a>
+                        <a class="nav-link" aria-current="page" href="keranjang.php">Keranjang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="struk.php">Struk</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
@@ -115,6 +118,7 @@ if (isset($_GET['id'])) {
                         </tr>
                     <tbody>
                         <?php
+                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] AND status_motor = 0 ORDER BY id_motor ASC";
                             $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] ORDER BY id_motor ASC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
@@ -150,6 +154,7 @@ if (isset($_GET['id'])) {
                                 <a href="proses-hapus.php?idm=<?php echo $r5['id_motor']?>"
                                     onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button"
                                         class="btn btn-danger">Delete</button></a>
+                                
                             </td>
                         </tr>
                         <?php } ?>
