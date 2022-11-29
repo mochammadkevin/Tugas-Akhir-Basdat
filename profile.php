@@ -6,13 +6,6 @@ if( !isset($_SESSION["login"]) ) {
     exit;
   }
 
-// $id_user = $_SESSION['id_user'];
-// $sql = "SELECT * FROM user WHERE id_user = $id_user";
-// $query = mysqli_query($koneksi, $sql);
-// $data = mysqli_fetch_array($query);
-// $nama_lengkap = $data['nama_lengkap'];
-
-
 $sql9 = "SELECT * FROM user WHERE id_user = $_SESSION[id_user]";
 $query9 = mysqli_query($koneksi, $sql9);
 $data = mysqli_fetch_array($query9);
