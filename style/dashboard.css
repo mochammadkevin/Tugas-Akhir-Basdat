@@ -8,7 +8,18 @@
 }
 
 .navbar-brand {
-    font-weight: 600;
+  font-weight: 600;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-left: 100px;
+  margin-right: 715px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,.55);
 }
 
 .nav-item {
@@ -17,7 +28,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #000000;
+  background: #ffffff;
 }
 
 .bg-dark {
@@ -85,7 +96,7 @@ body {
 /*---------home-----------*/
 /*---------history-----------*/
 .history {
-  background-image: url("../img/background2.jpg");
+  background-image: url("../img/background3.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -105,8 +116,9 @@ h5 {
 }
 
 h1 {
-  margin-top: 35px;
-  font-size: 100px;
+  margin-top: 15px;
+  
+  font-size: 90px;
   font-weight: 700;
   color: white;
 }
@@ -123,123 +135,13 @@ h1 {
   font-family: 'Mr De Haviland', cursive;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-}
-
-.menu {
-  color: white;
-}
-
-.heading {
-  text-align: center;
-  max-width: 60%;
-  margin: auto;
-}
-
-.menu .box {
-  background: #2c2c2c;
-  text-align: center;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.menu .box:hover {
-  background: none;
-  border: 2px solid #2c2c2c;
-}
-
-.menu .box .text {
-  padding: 30px;
-}
-
-.menu .box p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.5;
-}
-
-.menu a {
-  color: white;
-}
-
-.post {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: none;
-  border-right: none;
-}
-
-.post .grid {
-  grid-template-columns: repeat(5, 1fr);
-  margin-bottom: 10%;
-}
-
-footer {
-  color: white;
-  text-align: center;
-}
-
-
-footer .grid {
-  margin-top: 50px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-footer h3 {
-  font-weight: 300;
-  margin-bottom: 30px;
-  font-size: 16px;
-}
-
-footer i {
-  margin: 5px;
-}
-
-@media only screen and (max-width: 768px) {
-  .left {
-    width: 100%;
-  }
-
-  .about {
-    height: auto;
-  }
-
-  .about .left::after {
-    display: none;
-  }
-
-  .heading {
-    max-width: 100%;
-  }
-
-  .grid,
-  .post .grid,
-  footer .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (max-width: 511px) {
-  .home h1 {
-    font-size: 50px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .history p {
-    margin: 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .grid,
-  .post .grid,
-  footer .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
