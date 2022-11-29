@@ -82,6 +82,9 @@ if (isset($_GET['idm'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
@@ -93,9 +96,7 @@ if (isset($_GET['idm'])) {
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>

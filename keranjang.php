@@ -50,6 +50,9 @@ $nama_lengkap = $data['nama_lengkap'];
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="profile.php">Profil</a>
                     </li>
                     <li class="nav-item">
@@ -65,9 +68,7 @@ $nama_lengkap = $data['nama_lengkap'];
                         <a class="nav-link" aria-current="page" href="logout.php">Log out</a>
                     </li>
                     <!-- ini float in right dungs -->
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" ><?php echo $username ?></a>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
