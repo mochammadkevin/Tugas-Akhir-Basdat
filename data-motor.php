@@ -118,8 +118,8 @@ if (isset($_GET['id'])) {
                         </tr>
                     <tbody>
                         <?php
-                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] AND status_motor = 0 ORDER BY id_motor ASC";
-                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] ORDER BY id_motor ASC";
+                            // $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] AND status_motor = 0 ORDER BY id_motor ASC";
+                            $sql5 = "SELECT * FROM motor WHERE id_user = $_SESSION[id_user] ORDER BY id_motor AND status_motor = 0 DESC";
                             $query5 = mysqli_query($koneksi, $sql5);
                             $urut = 1;
                             while ($r5 = mysqli_fetch_array($query5)) {
@@ -148,13 +148,17 @@ if (isset($_GET['id'])) {
                             <td><img src="images/<?php echo $gambar_motor ?>" width="200px"></td>
                             <td><?php if ($status_motor != 1) { echo "Tersedia";} else { echo "Terpesan";}?></td>
                             <td scope="row">
+                                <?php if ($status_motor == 0): ?>
                                 <a href="edit-motor.php?idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-warning">Edit</button></a>
                                 <div>&nbsp;</div>
+                                <?php endif ?>
+                                
+                                <?php if ($status_motor == 0): ?>
                                 <a href="proses-hapus.php?idm=<?php echo $r5['id_motor']?>"
                                     onclick="return confirm('Yakin ingin menghapusnya?')"><button type="button"
                                         class="btn btn-danger">Delete</button></a>
-                                
+                                <?php endif ?>
                             </td>
                         </tr>
                         <?php } ?>
