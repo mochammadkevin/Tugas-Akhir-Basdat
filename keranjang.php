@@ -30,7 +30,7 @@ $nama_lengkap = $data['nama_lengkap'];
     <title>IPB Garage</title>
     <style>
     .mx-auto {
-        width: 1400px;
+        width: 1315px;
     }
 
     .card {
