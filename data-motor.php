@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style/datamotor.css?v=<?php echo time(); ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -53,7 +53,7 @@ if (isset($_GET['id'])) {
     <title>IPB Garage</title>
     <style>
     .mx-auto {
-        width: 1400px;
+        width: 1315px;
     }
 
     .card {
@@ -106,12 +106,7 @@ if (isset($_GET['id'])) {
                             <th scope="col">No.</th>
                             <th scope="col">Merk</th>
                             <th scope="col">Nama</th>
-                            <th scope="col">Jenis</th>
-                            <th scope="col">CC</th>
-                            <th scope="col">Tahun Keluaran</th>
-                            <th scope="col">Jarak Tempuh</th>
                             <th scope="col">Harga</th>
-                            <th scope="col">Deskripsi</th>
                             <th scope="col">Gambar</th>
                             <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
@@ -126,11 +121,7 @@ if (isset($_GET['id'])) {
                                 $id_motor = $r5['id_motor'];
                                 $nama_motor = $r5['nama_motor'];
                                 $merk_motor = $r5['merk_motor'];
-                                $jenis_motor = $r5['jenis_motor'];
-                                $CC_motor = $r5['CC_motor'];
                                 $gambar_motor = $r5['gambar_motor'];
-                                $tahun_keluaran = $r5['tahun_keluaran'];
-                                $jarak_tempuh = $r5['jarak_tempuh'];
                                 $harga_motor = $r5['harga_motor'];
                                 $deskripsi_motor = $r5['deskripsi_motor'];
                                 $status_motor = $r5['status_motor'];
@@ -139,18 +130,13 @@ if (isset($_GET['id'])) {
                             <th scope="row"><?php echo $urut++ ?></th>
                             <td><?php echo $merk_motor ?></td>
                             <td><?php echo $nama_motor ?></td>
-                            <td><?php echo $jenis_motor ?></td>
-                            <td><?php echo $CC_motor ?></td>
-                            <td><?php echo $tahun_keluaran ?></td>
-                            <td><?php echo $jarak_tempuh ?></td>
-                            <td>Rp. <?php echo $harga_motor ?></td>
-                            <td><?php echo $deskripsi_motor ?></td>
-                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px"></td>
+                            <td>Rp. <?php echo number_format($harga_motor, 0, '', '.') ?></td>
+                            <td><img src="images/<?php echo $gambar_motor ?>" width="200px" ></td>
                             <td><?php if ($status_motor != 1) { echo "Tersedia";} else { echo "Terpesan";}?></td>
                             <td scope="row">
                                 <?php if ($status_motor == 0): ?>
                                 <a href="edit-motor.php?idm=<?php echo $r5['id_motor'] ?>"><button type="button"
-                                        class="btn btn-warning">Edit</button></a>
+                                        class="btn btn-dark">Edit</button></a>
                                 <div>&nbsp;</div>
                                 <?php endif ?>
                                 
