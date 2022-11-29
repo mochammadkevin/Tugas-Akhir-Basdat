@@ -160,7 +160,7 @@ if (isset($_POST['submit'])) {
                     <label for="merk_motor" class="col-sm-2 col-form-label">Harga</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="merk_motor"
-                            value="Rp. <?php echo $harga_motor; ?>">
+                            value="Rp. <?php echo number_format($harga_motor, 0, '', '.') ?>">
                     </div>
                 </div>
                 <div class="mb-3 row">

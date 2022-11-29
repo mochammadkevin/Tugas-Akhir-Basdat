@@ -109,7 +109,7 @@ $nama_lengkap = $data['nama_lengkap'];
                             <td><?php echo $merk_motor ?></td>
                             <td><?php echo $nama_motor ?></td>
                             <td><img src="images/<?php echo $gambar_motor ?>" width="300px" ></td>
-                            <td>Rp. <?php echo $harga_motor ?></td>
+                            <td>Rp. <?php echo number_format($harga_motor, 0, '', '.') ?></td>
                             <td scope="row">
                                 <a href="keranjang2.php? ids=<?php echo $ids ?>"><button type="button"
                                         class="btn btn-light">Detail</button></a>
