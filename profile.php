@@ -54,10 +54,6 @@ if(isset($_POST['submit'])){
     }
 
     .card {
-        margin-top: 50px;
-    }
-
-    .card-body {
         margin-top: 10px;
     }
     </style>
@@ -103,6 +99,9 @@ if(isset($_POST['submit'])){
             <div class="left">
                 <div class="mx-auto">
                     <div class="card">
+                        <div class="card-header">
+                            Edit Profil
+                        </div>
                         <div class="card-body">
                             <?php
                         if ($error) {
