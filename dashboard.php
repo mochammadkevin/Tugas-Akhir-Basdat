@@ -28,10 +28,15 @@ $nama_lengkap = $data['nama_lengkap'];
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style/dashboard.css?v=<?php echo time(); ?>">
+    <style>
+    .mx-auto {
+        width: 1335px;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="container">
+    
         <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="dashboard.php">IPB Garage</a>
@@ -64,7 +69,7 @@ $nama_lengkap = $data['nama_lengkap'];
                 </div>
             </div>
         </nav>
-    </div>
+    
 
     <section class="home">
         <div class="container">
@@ -93,8 +98,6 @@ $nama_lengkap = $data['nama_lengkap'];
 
     <div class="mx-auto">
         <div class="card">
-            <div class="card-header">
-            </div>
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -123,7 +126,7 @@ $nama_lengkap = $data['nama_lengkap'];
                             <td><?php echo $merk_motor ?></td>
                             <td><?php echo $nama_motor ?></td>
                             <td><img class="img-tabel" src="images/<?php echo $gambar_motor ?>" width="300px"></td>
-                            <td>Rp. <?php echo $harga_motor ?></td>
+                            <td>Rp. <?php echo number_format($harga_motor, 0, '', '.') ?></td>
                             <td scope="row">
                                 <a href="detail-motor.php? idm=<?php echo $r5['id_motor'] ?>"><button type="button"
                                         class="btn btn-light">Detail</button></a>
@@ -135,26 +138,6 @@ $nama_lengkap = $data['nama_lengkap'];
                 </table>
             </div>
         </div>
-
-        <footer>
-            <div class="container top grid">
-                <div class="box">
-
-                </div>
-                <div class="box">
-                    <h3>Address</h3>
-                    <label>IPB University, Dramaga</label> <br><br>
-                    <label>Jawa Barat, Indonesia</label> <br><br>
-                    <label>(0251) 8622642</label> <br><br>
-                </div>
-                <div class="box">
-                    <h3>Creator</h3>
-                    <label>@mochammadkevin</label> <br><br>
-                    <label>@rifqifazzam</label> <br><br>
-                    <label>@harizkrisha</label> <br><br>
-                </div>
-            </div>
-        </footer>
 </body>
 
 </html>
