@@ -30,7 +30,7 @@ $nama_lengkap = $data['nama_lengkap'];
     <title>IPB Garage</title>
     <style>
     .mx-auto {
-        width: 1400px;
+        width: 1315px;
     }
 
     .card {
@@ -74,6 +74,9 @@ $nama_lengkap = $data['nama_lengkap'];
     </nav>
     <div class="mx-auto">
         <div class="card">
+        <div class="card-header">
+                Struk transaksi motor yang telah dipesan
+            </div>
             <div class="card-body">
                 <table class="table">
                     <thead>
