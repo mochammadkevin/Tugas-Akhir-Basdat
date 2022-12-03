@@ -15,19 +15,20 @@ if (isset($_GET['idm'])) {
     $motor = mysqli_query($koneksi, "SELECT * FROM motor WHERE id_motor = '$_GET[idm]'");
     $m = mysqli_fetch_object($motor);
 
+    // Ngambil data dari tabel motor
     $id_motor = $data['id_motor'];
     $nama_motor = $data['nama_motor'];
     $merk_motor = $data['merk_motor'];
     $jenis_motor = $data['jenis_motor'];
     $CC_motor = $data['CC_motor'];
-    $gambar_motor = $data['gambar_motor'];
     $tahun_keluaran = $data['tahun_keluaran'];
     $jarak_tempuh = $data['jarak_tempuh'];
     $harga_motor = $data['harga_motor'];
     $deskripsi_motor = $data['deskripsi_motor'];
+    $gambar_motor = $data['gambar_motor'];
 }
 if (isset($_POST['submit'])) {
-    //tampung data lama
+    //Nyimpen data baru dari form
     $merk_motor = $_POST['merk_motor'];
     $nama_motor = $_POST['nama_motor'];
     $jenis_motor = $_POST['jenis_motor'];
@@ -38,26 +39,25 @@ if (isset($_POST['submit'])) {
     $deskripsi_motor = $_POST['deskripsi_motor'];
     $gambar_lama = $_POST['gambar_lama'];
 
-    //tampung gambar baru
-    $gambar_motor = $_FILES['gambar_motor']['name'];
+    //Nyimpen gambar baru
+    $filename = $_FILES['gambar_motor']['name'];
     $tmp_name = $_FILES['gambar_motor']['tmp_name'];
 
-    $type1 = explode('.', $gambar_motor);
-    $type2 = $type1[1];
-
-    $tipe_diizinkan = array('png', 'jpg', 'jpeg', 'gif');
-
     //jika ganti gambar
-    if ($gambar_motor != '') {
-
+    if ($filename != '') {
+        // Proses nyimpen gambar baru
+        $type1 = explode('.', $filename);
+        $type2 = $type1[1];
+        $newname = 'motor' . time() . '.' . $type2;
+        $tipe_diizinkan = array('png', 'jpg', 'jpeg', 'gif');
         //validasi format gambar
         if (!in_array($type2, $tipe_diizinkan)) {
             $error = "Format file tidak diizinkan";
         } else {
-            //hapus gambar lama
+            // Jika format file sesuai
             unlink("images/" . $gambar_lama);
-            //upload gambar baru
-            move_uploaded_file($tmp_name, 'images/' . $gambar_motor);
+            move_uploaded_file($tmp_name, './images/' . $newname);
+            $gambar_motor = $newname;
 
         }
     } else {
@@ -163,7 +163,7 @@ if (isset($_POST['submit'])) {
                     <div class="mb-3 row">
                         <label for="merk_motor" class="col-sm-2 col-form-label">Merk</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="merk_motor" name="merk_motor" required>
+                            <select class="form-control" id="merk_motor" name="merk_motor">
                                 <option value="">Pilih merk motor</option>
                                 <option value="Yamaha" <?php if ($merk_motor == "Yamaha") echo "selected" ?>>Yamaha
                                 </option>
@@ -204,7 +204,7 @@ if (isset($_POST['submit'])) {
                     <div class="mb-3 row">
                         <label for="jenis_motor" class="col-sm-2 col-form-label">Jenis</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="jenis_motor" name="jenis_motor" required>
+                            <select class="form-control" id="jenis_motor" name="jenis_motor">
                                 <option value="">Pilih jenis motor</option>
                                 <option value="Bebek" <?php if ($jenis_motor == "Bebek") echo "selected" ?>>Bebek</option>
                                 <option value="Sport" <?php if ($jenis_motor == "Sport") echo "selected" ?>>Sport</option>
@@ -253,12 +253,11 @@ if (isset($_POST['submit'])) {
                     <p>Gambar lama:</p>
                     <img src="images/<?php echo $m->gambar_motor ?>" width="100px">
                     <input type="hidden" name="gambar_lama" value="<?php echo $m->gambar_motor ?>">
-                    <p>Wajib mengupload ulang gambar pada saat mengedit data!</p>
                     <div class="mb-3 row">
                         <label for="gambar_motor" class="col-sm-2 col-form-label">Gambar</label>
                         <div class="col-sm-10">
                             <input type="file" class="form-control" id="gambar_motor" name="gambar_motor"
-                                value="<?php echo $gambar_motor ?>" required>
+                                value="<?php echo $gambar_motor ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
